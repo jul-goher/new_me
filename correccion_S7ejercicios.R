@@ -1,12 +1,11 @@
-chain <- subset(proteins_167_161521, select = c (2, 5))
-View (chain) #cambiar chain a el original 
-
-proteins_167_161521 [which (proteins_167_161521$Strand == "+"), c("Strand", "Locus")] -> positive
+View(proteins_167_161521)
+proteins_167_161521 [which (proteins_167_161521$Strand == "+"), c("Strand", "Lenght")] -> positive
 View (positive) 
 
-proteins_167_161521 [which (proteins_167_161521$Strand == "-"), c("Strand", "Locus")] -> negative
+proteins_167_161521 [which (proteins_167_161521$Strand == "-"), c("Strand", "Lenght")] -> negative
 View (negative)
 
+#Add the object to a anew file
 write.csv (positive, file = "Resultados/positive_ecoliK12.pdf")
 write.csv (negative, file = "Resultados/negative_ecoliK12.pdf")
 
